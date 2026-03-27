@@ -8,18 +8,19 @@
   <form action="" method="post" id="formambiente" class="ui form">
     {% csrf_token %}
     {% for dato in ambiente %}
+    <input type="hidden" name="id_ambiente" id="id_ambiente" value="({dato.id})">
     <div class="three fields">
       <div class="field">
         <label for="nombre">Nombre del Ambiente</label>
-        <input type="text" name="nombre" id="nombre" value="{{dato.1}}">
+        <input type="text" name="nombre" id="nombre" value="{{dato.NombreAmbiente}}">
       </div>
       <div class="field">
         <label for="tipo">Tipo de Ambiente</label>
-        <input type="text" name="tipo" id="tipo" value="{{dato.2}}">
+        <input type="text" name="tipo" id="tipo" value="{{dato.TipoAmbiente}}">
       </div>
       <div class="field">
         <label for="observacion">Observaciones del Ambiente</label>
-        <input type="text" name="observacion" id="observacion" value="{{dato.3}}">
+        <input type="text" name="observacion" id="observacion" value="{{dato.Observacion}}">
       </div>
     </div>
     <div>
